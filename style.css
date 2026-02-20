@@ -492,3 +492,45 @@ body {
         flex-direction: column;
     }
 }
+
+/* 页脚链接 */
+.footer-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* 学术风格调整 */
+.avatar-placeholder i.fa-atom {
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 技能标签颜色调整 */
+.skill-tag {
+    background-color: #e8f4fc;
+    color: var(--primary-color);
+    border: 1px solid #b3d9ff;
+}
+
+/* 项目卡片学术风格 */
+.project-card {
+    border-top: 4px solid var(--primary-color);
+}

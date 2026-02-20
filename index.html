@@ -6,6 +6,7 @@
     <title>个人主页 - 姚星宇</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -27,15 +28,15 @@
         <div class="container">
             <div class="hero-content">
                 <h1>你好，我是 <span class="highlight">姚星宇</span></h1>
-                <p>计算机科学学生 | 技术爱好者 | 持续学习者</p>
+                <p>凝聚态物理硕士 | 游戏开发者 | 技术探索者</p>
                 <div class="hero-buttons">
                     <a href="#about" class="btn btn-primary">了解更多</a>
-                    <a href="#contact" class="btn btn-secondary">联系我</a>
+                    <a href="#projects" class="btn btn-secondary">查看项目</a>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="avatar-placeholder">
-                    <i class="fas fa-user-circle"></i>
+                    <i class="fas fa-atom"></i>
                     <!-- 这里可以替换为你的头像 -->
                 </div>
             </div>
@@ -49,24 +50,31 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>关于我</h3>
-                    <p>这里可以写你的个人简介，包括教育背景、专业方向、兴趣爱好等。</p>
-                    <p>例如：中国科学技术大学计算机科学与技术专业在读，对Web开发、人工智能和开源技术有浓厚兴趣。</p>
+                    <p>中国科学技术大学凝聚态物理专业硕士一年级学生，同时是一名热爱游戏开发的业余开发者。</p>
+                    <p>在物理研究中探索材料的微观世界，在代码中构建有趣的虚拟世界。相信科学与艺术的结合能创造出独特价值。</p>
                     
-                    <h3>技能</h3>
+                    <h3>研究兴趣</h3>
+                    <p>凝聚态物理理论计算、材料模拟、量子计算基础、计算物理方法。</p>
+                    
+                    <h3>技术栈</h3>
                     <div class="skills">
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C++</span>
                         <span class="skill-tag">Python</span>
+                        <span class="skill-tag">GDScript</span>
+                        <span class="skill-tag">Godot Engine</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">LaTeX</span>
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">数值计算</span>
+                        <span class="skill-tag">物理模拟</span>
                     </div>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
                         <i class="fas fa-graduation-cap"></i>
                         <h4>教育背景</h4>
-                        <p>中国科学技术大学</p>
+                        <p>中国科学技术大学<br>凝聚态物理硕士</p>
                     </div>
                     <div class="stat-card">
                         <i class="fas fa-map-marker-alt"></i>
@@ -74,9 +82,9 @@
                         <p>安徽合肥</p>
                     </div>
                     <div class="stat-card">
-                        <i class="fas fa-language"></i>
-                        <h4>语言</h4>
-                        <p>中文、英语</p>
+                        <i class="fas fa-gamepad"></i>
+                        <h4>开发领域</h4>
+                        <p>游戏开发<br>物理模拟</p>
                     </div>
                 </div>
             </div>
@@ -90,44 +98,47 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-gamepad"></i>
                     </div>
-                    <h3>个人网站</h3>
-                    <p>使用HTML/CSS/JavaScript创建的响应式个人网站，展示个人作品和技能。</p>
+                    <h3>量子迷宫游戏</h3>
+                    <p>基于Godot Engine开发的2D解谜游戏，将量子力学概念融入游戏机制，让玩家在娱乐中学习物理原理。</p>
                     <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                        <span>Godot</span>
+                        <span>GDScript</span>
+                        <span>C++</span>
+                        <span>Shader</span>
                     </div>
-                    <a href="#" class="project-link">查看详情</a>
+                    <a href="#" class="project-link">查看演示</a>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-atom"></i>
                     </div>
-                    <h3>AI助手项目</h3>
-                    <p>基于深度学习的智能对话助手，支持自然语言处理和上下文理解。</p>
+                    <h3>晶体结构模拟器</h3>
+                    <p>使用Python和OpenGL开发的交互式晶体结构可视化工具，支持多种晶格类型和缺陷模拟。</p>
                     <div class="project-tech">
                         <span>Python</span>
-                        <span>PyTorch</span>
-                        <span>NLP</span>
+                        <span>OpenGL</span>
+                        <span>NumPy</span>
+                        <span>Matplotlib</span>
                     </div>
-                    <a href="#" class="project-link">查看详情</a>
+                    <a href="#" class="project-link">查看代码</a>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-calculator"></i>
                     </div>
-                    <h3>移动应用</h3>
-                    <p>跨平台移动应用开发，提供便捷的生活服务和工具功能。</p>
+                    <h3>物理计算工具箱</h3>
+                    <p>为凝聚态物理研究开发的C++计算库，包含常用算法、数值方法和数据处理工具。</p>
                     <div class="project-tech">
-                        <span>React Native</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
+                        <span>C++</span>
+                        <span>CMake</span>
+                        <span>Eigen</span>
+                        <span>HDF5</span>
                     </div>
-                    <a href="#" class="project-link">查看详情</a>
+                    <a href="#" class="project-link">查看文档</a>
                 </div>
             </div>
         </div>
@@ -140,22 +151,22 @@
             <div class="blog-posts">
                 <article class="blog-post">
                     <div class="post-date">2024-03-15</div>
-                    <h3><a href="#">Web开发入门指南</a></h3>
-                    <p>分享从零开始学习Web开发的经验和资源推荐，适合初学者快速上手。</p>
+                    <h3><a href="#">Godot引擎入门：物理与游戏的结合</a></h3>
+                    <p>分享如何在Godot引擎中实现真实的物理模拟，以及如何将物理知识应用于游戏开发。</p>
                     <a href="#" class="read-more">阅读全文</a>
                 </article>
                 
                 <article class="blog-post">
                     <div class="post-date">2024-02-28</div>
-                    <h3><a href="#">Git版本控制最佳实践</a></h3>
-                    <p>介绍Git工作流、分支管理和团队协作的技巧，提高开发效率。</p>
+                    <h3><a href="#">凝聚态物理中的数值计算方法</a></h3>
+                    <p>介绍在凝聚态物理研究中常用的数值计算技术和C++实现，包括蒙特卡洛方法和密度泛函理论基础。</p>
                     <a href="#" class="read-more">阅读全文</a>
                 </article>
                 
                 <article class="blog-post">
                     <div class="post-date">2024-01-10</div>
-                    <h3><a href="#">Python数据分析实战</a></h3>
-                    <p>使用Pandas和Matplotlib进行数据清洗、分析和可视化的完整案例。</p>
+                    <h3><a href="#">教育游戏设计：让物理学习更有趣</a></h3>
+                    <p>探讨如何设计既有趣又有教育意义的物理主题游戏，平衡游戏性和知识传递。</p>
                     <a href="#" class="read-more">阅读全文</a>
                 </article>
             </div>
@@ -171,8 +182,8 @@
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>邮箱</h4>
-                            <p>yaoxingyu0405@example.com</p>
+                            <h4>学术邮箱</h4>
+                            <p>yaoxingyu@mail.ustc.edu.cn</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -183,10 +194,17 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-itch-io"></i>
                         <div>
-                            <h4>LinkedIn</h4>
-                            <p><a href="#">linkedin.com/in/yaoxingyu</a></p>
+                            <h4>itch.io</h4>
+                            <p><a href="https://yaoxingyu.itch.io">yaoxingyu.itch.io</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-file-alt"></i>
+                        <div>
+                            <h4>学术主页</h4>
+                            <p><a href="https://orcid.org/0000-0000-0000-0000">ORCID</a></p>
                         </div>
                     </div>
                 </div>
@@ -206,8 +224,13 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 姚星宇. 保留所有权利.</p>
-            <p>本网站使用GitHub Pages部署</p>
+            <p>&copy; <span class="current-year">2024</span> 姚星宇. 凝聚态物理 × 游戏开发</p>
+            <p>探索微观世界，构建虚拟世界 | 本网站使用GitHub Pages部署</p>
+            <p class="footer-links">
+                <a href="https://github.com/yaoxingyu0405"><i class="fab fa-github"></i></a>
+                <a href="https://yaoxingyu.itch.io"><i class="fab fa-itch-io"></i></a>
+                <a href="mailto:yaoxingyu@mail.ustc.edu.cn"><i class="fas fa-envelope"></i></a>
+            </p>
         </div>
     </footer>
 
