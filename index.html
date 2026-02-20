@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 - 姚星宇</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">姚星宇</a>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> 个人介绍</a></li>
+                <li><a href="#projects"><i class="fas fa-code"></i> 项目展示</a></li>
+                <li><a href="#blog"><i class="fas fa-blog"></i> 博客文章</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> 联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>你好，我是 <span class="highlight">姚星宇</span></h1>
+                <p>计算机科学学生 | 技术爱好者 | 持续学习者</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">了解更多</a>
+                    <a href="#contact" class="btn btn-secondary">联系我</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-placeholder">
+                    <i class="fas fa-user-circle"></i>
+                    <!-- 这里可以替换为你的头像 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 个人介绍 -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">个人介绍</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>关于我</h3>
+                    <p>这里可以写你的个人简介，包括教育背景、专业方向、兴趣爱好等。</p>
+                    <p>例如：中国科学技术大学计算机科学与技术专业在读，对Web开发、人工智能和开源技术有浓厚兴趣。</p>
+                    
+                    <h3>技能</h3>
+                    <div class="skills">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">React</span>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>教育背景</h4>
+                        <p>中国科学技术大学</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>所在地</h4>
+                        <p>安徽合肥</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-language"></i>
+                        <h4>语言</h4>
+                        <p>中文、英语</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">项目展示</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>个人网站</h3>
+                    <p>使用HTML/CSS/JavaScript创建的响应式个人网站，展示个人作品和技能。</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <a href="#" class="project-link">查看详情</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI助手项目</h3>
+                    <p>基于深度学习的智能对话助手，支持自然语言处理和上下文理解。</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>NLP</span>
+                    </div>
+                    <a href="#" class="project-link">查看详情</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>移动应用</h3>
+                    <p>跨平台移动应用开发，提供便捷的生活服务和工具功能。</p>
+                    <div class="project-tech">
+                        <span>React Native</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <a href="#" class="project-link">查看详情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 博客文章 -->
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="section-title">博客文章</h2>
+            <div class="blog-posts">
+                <article class="blog-post">
+                    <div class="post-date">2024-03-15</div>
+                    <h3><a href="#">Web开发入门指南</a></h3>
+                    <p>分享从零开始学习Web开发的经验和资源推荐，适合初学者快速上手。</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="post-date">2024-02-28</div>
+                    <h3><a href="#">Git版本控制最佳实践</a></h3>
+                    <p>介绍Git工作流、分支管理和团队协作的技巧，提高开发效率。</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="post-date">2024-01-10</div>
+                    <h3><a href="#">Python数据分析实战</a></h3>
+                    <p>使用Pandas和Matplotlib进行数据清洗、分析和可视化的完整案例。</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">联系方式</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>邮箱</h4>
+                            <p>yaoxingyu0405@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/yaoxingyu0405">github.com/yaoxingyu0405</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="#">linkedin.com/in/yaoxingyu</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>发送消息</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="姓名" required>
+                        <input type="email" placeholder="邮箱" required>
+                        <textarea placeholder="消息内容" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 姚星宇. 保留所有权利.</p>
+            <p>本网站使用GitHub Pages部署</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
