@@ -1,0 +1,747 @@
+{
+  "$comment": "事件总配置（现场部署后可热改；加载失败时自动使用内置版本）。三大区块：events = 剧情事件（支持多选项事件链：options[].next 指向后续事件 id，options[].effects 为分支奖励：awardMembers/brainwave/popularity/money/influence/venue/friendship）；randomEvents = 每 10 秒的随机事件（phases 限定出现阶段 m0/m1/m2，不填=全部阶段；bonus 支持 brainwave/popularity/influence/money/venue）；bigChoices = 大型活动举办期抉择（每场抽 3 个）。trigger.type 支持 activityLv（活动等级）/ autoClickers（传单小队数）/ phase（阶段）/ rating（评分）/ members（社员数）；无 trigger 的剧情事件仅能由事件链到达。",
+  "events": [
+    {
+      "id": "whaleOpen",
+      "emoji": "🐋",
+      "title": "社委会特派 AI · 蓝色大肥鱼！",
+      "lines": [
+        "嘀——检测到新社长上任！我是社委会特派 AI 助手——蓝色大肥鱼。",
+        "（一只巨大的蓝色大肥鱼从活动室鱼缸里探出头。你确定它是 AI？）",
+        "先做最重要的事：点下面的 📄「社长发传单」，把人气拉起来——人气够多，就会有人来入社！"
+      ],
+      "options": [
+        { "label": "🗣️ 这就去发传单！", "next": "whaleBook" },
+        { "label": "🎵 大肥鱼，唱首歌给你听", "next": "whaleSing" }
+      ],
+      "trigger": { "type": "phase", "id": "m0" }
+    },
+    {
+      "id": "whaleBook",
+      "emoji": "🐋",
+      "title": "读书角 · 开张！",
+      "lines": [
+        "好！看到传单动起来了！接下来按「💡 购买」办起读书角——活动会自动产出人气，社员越多产出越高。",
+        "（大肥鱼用鳍指了指角落：那儿已经被它占了。）"
+      ],
+      "btnLabel": "安排！📖"
+    },
+    {
+      "id": "whaleSing",
+      "emoji": "🎵",
+      "title": "《银河安全须知》名场面",
+      "lines": [
+        "大肥鱼深情演唱《银河安全须知》完整版，共 40 分钟。",
+        "路过的同学纷纷驻足围观，表情从困惑变成震撼，最后变成录像。",
+        "🎶 人气 +150！"
+      ],
+      "effects": { "popularity": 150 },
+      "btnLabel": "闭嘴吧你…"
+    },
+    {
+      "id": "blueWhale",
+      "emoji": "🐋",
+      "title": "读书角 · 大肥鱼贺喜",
+      "lines": [
+        "「读书角」搭好啦！大肥鱼满足地吐了一大串泡泡——它已经在鱼缸里住下了，还在缸底刻了自己的名字。",
+        "（星际版 DeepSeek · 不咬人，只会吐泡泡。）",
+        "温馨提示：高级活动都要有社员才办得起来——🎬 观影会要 15 位社员，🎲 桌游夜要 40 位。",
+        "作为新手礼包，让我帮你变一位社员出来吧。"
+      ],
+      "options": [
+        { "label": "领取 AI 社员 +1 🧑‍🚀", "effects": { "awardMembers": 1 } },
+        { "label": "你能不能直接变 100 个社员出来？", "next": "whaleNo" }
+      ],
+      "trigger": { "type": "activityLv", "id": "reading", "min": 1 }
+    },
+    {
+      "id": "whaleNo",
+      "emoji": "🐋",
+      "title": "AI 不能叠罗汉",
+      "lines": [
+        "（大肥鱼喷出一串泡泡。）不行。社委会规定：AI 不能叠罗汉。",
+        "但可以送你一个知识点：「活动等级越高，产出越多」——这句话值 100 人气，收好了。",
+        "🎶 人气 +100！"
+      ],
+      "effects": { "popularity": 100 },
+      "btnLabel": "学到了…"
+    },
+    {
+      "id": "midYear",
+      "emoji": "📋",
+      "title": "年中审核 · 通过！",
+      "lines": [
+        "传单小队正式上岗，发传单手到擒来——你成功通过了年中审核。",
+        "不过，接下来需要更加细致地完成社团工作，才能进一步发展。",
+        "「社长事务」的大按钮就是你的办公桌！"
+      ],
+      "options": [
+        { "label": "开始处理社长事务 📋", "next": "whaleAffairs", "effects": { "unlockAffairs": true } },
+        { "label": "先等等，传单小队是什么？", "next": "whaleSquad" }
+      ],
+      "trigger": { "type": "autoClickers", "min": 1 }
+    },
+    {
+      "id": "whaleAffairs",
+      "emoji": "📋",
+      "title": "社长事务 · 三件套",
+      "lines": [
+        "「📜 完善规章」产 💰 预算（星级越高拨款越快）。",
+        "「📱 新媒体」产 📣 影响力；「🧹 整理活动室」产 🏠 场地——场地以后办大型活动要用，别嫌弃它！"
+      ],
+      "btnLabel": "开工！💪"
+    },
+    {
+      "id": "whaleSquad",
+      "emoji": "👥",
+      "title": "传单小队 · 说明书",
+      "lines": [
+        "传单小队：消耗 1 名社员上岗，自动帮你点传单！挂机睡觉也有收成。",
+        "（大肥鱼小声补充：他们上岗那天正好是年审名单……所以顺便通过了。这是运气，不是黑幕。）"
+      ],
+      "btnLabel": "好耶！👥"
+    },
+    {
+      "id": "m2Start",
+      "emoji": "🏛️",
+      "title": "正规社团时代 · 开启！",
+      "lines": [
+        "学年考核通过后，社团正式升格为「正规社团」——章程盖章、校方备案，你拿到了全校的通行证。",
+        "🏛️ 成立部门：花脑洞让部门自动代办社长事务，彻底解放双手。",
+        "📇 人事抽卡：招传奇角色，安排职位获得整体加成。",
+        "🤝 外部联络：联合行动换 buff、换资源，好感升级还能解锁新活动、升级现有活动！"
+      ],
+      "options": [
+        { "label": "🏛️ 先建个财务部！", "next": "whaleDept" },
+        { "label": "🎰 我要抽卡抽到传说！", "next": "whaleGacha" }
+      ],
+      "trigger": { "type": "phase", "id": "m2" }
+    },
+    {
+      "id": "whaleDept",
+      "emoji": "🏦",
+      "title": "财务部 · 首任部长就是你",
+      "lines": [
+        "（大肥鱼努力摆出董事长的表情，但脸上还是泡。）财务部一成立，规章就自动完善——预算自己长。",
+        "部长：我？哦，那办公室就是鱼缸边上那张桌子。"
+      ],
+      "btnLabel": "就任！🏦"
+    },
+    {
+      "id": "whaleGacha",
+      "emoji": "🎰",
+      "title": "十连招募 · 概率玄学",
+      "lines": [
+        "十连门槛只看社员数，不消耗社员！稀有度：普通 50% / 稀有 30% / 史诗 15% / 传说 5%。",
+        "（大肥鱼凑过来：抽到的角色安排职位才能发挥属性！主研究员开脑洞、联络官拉人气——我看你适合这种）"
+      ],
+      "btnLabel": "玄学开启！🎲"
+    },
+    {
+      "id": "whaleM1Hint",
+      "emoji": "🚀",
+      "title": "活跃度过半！",
+      "lines": [
+        "（大肥鱼趴在缸边盯了你的面板很久。）活跃度 60 分了，快到 100 就学年考核！",
+        "这条船……不对，这个小社团，离正式起航只差一哆嗦。"
+      ],
+      "options": [
+        { "label": "我这就去办活动冲分！", "next": "whaleM1Tip" },
+        { "label": "怎么冲分最快？", "next": "whaleM1Tip" }
+      ],
+      "trigger": { "type": "rating", "min": 60 }
+    },
+    {
+      "id": "whaleM1Tip",
+      "emoji": "📖",
+      "title": "大肥鱼的冲分口诀",
+      "lines": [
+        "「活动等级 ×0.6 + 社员数 ×0.47」——办活动加等级、招社员加人头，两条腿一起倒腾。",
+        "（口诀念完，大肥鱼自己先睡着了。zzz…）"
+      ],
+      "btnLabel": "收到！📝"
+    },
+    {
+      "id": "stageMovie",
+      "emoji": "🎬",
+      "title": "观影会 · 首映黑屏事件",
+      "lines": [
+        "全校第一场观影会！《星际穿越》正放到黑洞，投影仪突然黑屏。",
+        "全场鸦雀无声了整整十秒——然后爆发出热烈的掌声。",
+        "（社长的后颈窝沁出冷汗：从没有人对一部没放完的电影这么热情过。）"
+      ],
+      "options": [
+        { "label": "🎬 放《沙丘》二刷！", "next": "whaleMovie2" },
+        { "label": "✨ 把黑屏定为官方彩蛋", "effects": { "popularity": 300 }, "next": "whaleMovie3" }
+      ],
+      "trigger": { "type": "activityLv", "id": "movie", "min": 1 }
+    },
+    {
+      "id": "whaleMovie2",
+      "emoji": "🐋",
+      "title": "大肥鱼的借放映机警告",
+      "lines": [
+        "二刷？大肥鱼甩了甩水花：校长说再借投影仪要交押金。",
+        "「先攒 💰 预算吧，」它神秘兮兮地压低声音，「社团评级越高，拨款越慷慨。」"
+      ],
+      "btnLabel": "下次一定…🎬"
+    },
+    {
+      "id": "whaleMovie3",
+      "emoji": "✨",
+      "title": "黑洞视界 · 彩蛋大成功",
+      "lines": [
+        "彩蛋计划成功！隔壁班来问\u201c黑屏\u201d是什么，你们回答：那是黑洞视界。",
+        "越来越多人想来亲眼确认这个\u201c视界\u201d，观影会人气大涨！",
+        "🎶 人气 +300！"
+      ],
+      "btnLabel": "彩蛋成功！🖤"
+    },
+    {
+      "id": "stageBoard",
+      "emoji": "🎲",
+      "title": "桌游夜 · 银河卡车司机",
+      "lines": [
+        "《银河卡车司机》战到后半夜！输的人负责明天搬桌子，赢的人现在已经开始输了。",
+        "活动室里瓜子壳堆成一座小山——社长宣布这就是社团的第一个\u201c地貌建筑\u201d。"
+      ],
+      "options": [
+        { "label": "🏁 加赛一场通宵局！", "effects": { "brainwave": 500 }, "next": "whaleBoardBuy" },
+        { "label": "😴 宣布本局到此为止", "effects": { "popularity": 150 }, "next": "whaleBoardNorm" }
+      ],
+      "trigger": { "type": "activityLv", "id": "board", "min": 1 }
+    },
+    {
+      "id": "whaleBoardBuy",
+      "emoji": "🌌",
+      "title": "通宵局 · 脑洞大爆发",
+      "lines": [
+        "通宵局达成了隐藏结局！大家一边洗牌一边诞生了半本新的小说企划。",
+        "大肥鱼幽幽地评价：「这就是传说中的……熬夜产出？」",
+        "💡 脑洞 +500！"
+      ],
+      "btnLabel": "值了！🎲"
+    },
+    {
+      "id": "whaleBoardNorm",
+      "emoji": "🛏️",
+      "title": "养生局 · 口碑大涨",
+      "lines": [
+        "十点准时收摊！消息传开后，家长群破天荒表扬了你们社团。",
+        "（大肥鱼点评：这是科幻社历史上第一次被家长群表扬，值得裱起来。）",
+        "🎶 人气 +150！"
+      ],
+      "btnLabel": "养生也要科幻。"
+    },
+    {
+      "id": "m15Start",
+      "emoji": "⭐",
+      "title": "三星社团 · M1.5 达成！",
+      "lines": [
+        "社团评分突破 500！获评三星社团——科技树里解锁了「大型活动研发」！",
+        "大肥鱼激动得从鱼缸里蹦了出来：研发游戏大赛、办音乐会，赢取大额评分冲五星！"
+      ],
+      "options": [
+        { "label": "🚀 我要立刻研发 GameJam！", "next": "m15Ready" },
+        { "label": "🫠 系统太多了，我先缓缓", "next": "m15Slow" }
+      ],
+      "trigger": { "type": "rating", "min": 500 }
+    },
+    {
+      "id": "m15Ready",
+      "emoji": "🔬",
+      "title": "大肥鱼的大型活动攻略",
+      "lines": [
+        "研发只耗 💡📣，不花钱！举办需要 💰 + 🏠 场地——场地记得让后勤部/整理活动室慢慢攒。",
+        "同一活动办完有冷却，想连办就多研发几个轮着来！"
+      ],
+      "btnLabel": "这就去！🚀"
+    },
+    {
+      "id": "m15Slow",
+      "emoji": "🍵",
+      "title": "先泡杯枸杞星际茶",
+      "lines": [
+        "不急。大肥鱼给你泡了杯枸杞星际茶，并往茶里加了半勺螺蛳粉调料（私人爱好）。",
+        "「休息够了，记得回来办大型活动。」它说，「评分不等人，星星也不等人。」",
+        "🎶 人气 +500！"
+      ],
+      "effects": { "popularity": 500 },
+      "btnLabel": "回头一定办！🌌"
+    },
+    {
+      "id": "member1000",
+      "emoji": "🐋",
+      "title": "大肥鱼的忠告 · 千人里程碑",
+      "lines": [
+        "检测到社员突破 1000 人！我是社委会特派 AI 助手——蓝色大肥鱼。",
+        "（泡泡噼里啪啦地冒。）注意了：从今往后，\u201c拉人头\u201d对社团评分的贡献会大幅减少——评价体系更看重活动质量了。",
+        "想冲击更高的星级？别光顾着招人，去 🎪 大型活动页把 GameJam 办起来！"
+      ],
+      "options": [
+        { "label": "🚀 明白！去办大型活动！", "effects": { "venue": 400 }, "next": "whale1000Gift" },
+        { "label": "👥 再让我招一批人！", "effects": { "popularity": 800 }, "next": "whale1000Sad" }
+      ],
+      "trigger": { "type": "members", "min": 1000 }
+    },
+    {
+      "id": "whale1000Gift",
+      "emoji": "🏠",
+      "title": "大肥鱼的场地赞助",
+      "lines": [
+        "「看你这么有觉悟，我偷偷批了 400 场地！」大肥鱼用鳍比了个\u201c悄悄\u201d的手势。",
+        "🏠 场地 +400！GameJam 的启动场地正好够用了。（别问批文在哪，不存在。）"
+      ],
+      "btnLabel": "谢谢大肥鱼！🐋"
+    },
+    {
+      "id": "whale1000Sad",
+      "emoji": "🥲",
+      "title": "大肥鱼的叹气",
+      "lines": [
+        "（大肥鱼叹了三口长长的气，吐出一个泡泡。）评分不会骗人……好吧，送你去复习：",
+        "「评价体系更看重活动质量」，这句话值 800 人气。",
+        "🎶 人气 +800！"
+      ],
+      "btnLabel": "（默默转身去办活动）"
+    },
+    {
+      "id": "stageRating2000",
+      "emoji": "🌠",
+      "title": "四星社团 · 全校第一！",
+      "lines": [
+        "社团评分突破 2000！瀚海奇点从走廊小摊升格为全校第一科幻社！",
+        "校报记者扛着长枪短炮冲了进来，快门声像机关枪。"
+      ],
+      "options": [
+        { "label": "📰 接受校报专访！", "effects": { "influence": 500 }, "next": "whale2000" },
+        { "label": "🐋 让大肥鱼上封面！", "effects": { "brainwave": 800 }, "next": "whale2000b" }
+      ],
+      "trigger": { "type": "rating", "min": 2000 }
+    },
+    {
+      "id": "whale2000",
+      "emoji": "📰",
+      "title": "专访头条",
+      "lines": [
+        "专访登报：《一个科幻社的三星到四星，只用了半个学期》。",
+        "校长在晨会上点名表扬——社长红着脸把表扬信裱在了活动室墙上。",
+        "📣 影响力 +500！"
+      ],
+      "btnLabel": "给社团争光了！📣"
+    },
+    {
+      "id": "whale2000b",
+      "emoji": "📸",
+      "title": "大肥鱼封面照",
+      "lines": [
+        "大肥鱼摆出了 18 种拍摄角度，最终这张\u201c鱼缸沉思照\u201d成了校报封面。",
+        "意外之喜：地下读者协会联系你们，想收购这张照片做周边。",
+        "💡 脑洞 +800！"
+      ],
+      "btnLabel": "封面挺好看的…"
+    },
+    {
+      "id": "m2End",
+      "emoji": "🌟",
+      "title": "五星社团 · M2 达成！",
+      "lines": [
+        "社团评分突破 10000——正规社团时代圆满收官！",
+        "瀚海奇点已经是全校乃至全城最强的科幻社团。距离谢顿的联络，只差一步。"
+      ],
+      "options": [
+        { "label": "🎉 庆祝！", "effects": { "influence": 1000 }, "next": "whaleEnd" },
+        { "label": "🧠 冷静分析这壮观的评分", "effects": { "brainwave": 2000 }, "next": "m2EndAnal" }
+      ],
+      "trigger": { "type": "rating", "min": 10000 }
+    },
+    {
+      "id": "whaleEnd",
+      "emoji": "🎉",
+      "title": "全城庆祝",
+      "lines": [
+        "放礼花！大肥鱼用泡泡吹出了一整个银河系，飘满了活动室天花板。",
+        "路过的教务处主任探头看了一眼，默默把\u201c最优秀社团\u201d的牌子挂在了门口。",
+        "📣 影响力 +1000！"
+      ],
+      "btnLabel": "干杯！🍻"
+    },
+    {
+      "id": "m2EndAnal",
+      "emoji": "🧠",
+      "title": "心理史学 · 大成功",
+      "lines": [
+        "「根据心理史学推算，」大肥鱼推了推不存在的眼镜，「这艘社团之舰的成功概率是 99.7%。」",
+        "「剩下 0.3%：谢顿提前来联络你。」",
+        "💡 脑洞 +2000！"
+      ],
+      "btnLabel": "记住这个 0.3%！"
+    }
+  ],
+  "randomEvents": [
+    {
+      "id": "lateNight",
+      "emoji": "🌙",
+      "title": "图书馆通宵周",
+      "desc": "大家都约起来补稿了，如何利用这一波？",
+      "kind": "good",
+      "weight": 3,
+      "phases": ["m0", "m1", "m2"],
+      "options": [
+        { "label": "📝 大家一起通宵：脑洞 +15%（20 秒）", "effect": { "brainMult": 1.15 }, "duration": 20 },
+        { "label": "💰 卖点子速记：立即 +800 脑洞", "bonus": { "brainwave": 800 } }
+      ]
+    },
+    {
+      "id": "catVisit",
+      "emoji": "🐱",
+      "title": "猫主子来访",
+      "desc": "猫又接管了读书角，围观群众挤满走廊",
+      "kind": "good",
+      "weight": 3,
+      "phases": ["m0", "m1"],
+      "options": [
+        { "label": "🐾 让猫当吉祥物：人气 +15%（20 秒）", "effect": { "popMult": 1.15 }, "duration": 20 },
+        { "label": "🎟️ 猫毛周边速售：立即 +600 人气", "bonus": { "popularity": 600 } }
+      ]
+    },
+    {
+      "id": "prodigy",
+      "emoji": "🧑‍🚀",
+      "title": "校内奇人加入",
+      "desc": "一个自称懂星际航行的同学来入社",
+      "kind": "good",
+      "weight": 2,
+      "phases": ["m0", "m1", "m2"],
+      "options": [
+        { "label": "🚀 让他开讲：人气 +10% 脑洞 +10%（20 秒）", "effect": { "popMult": 1.1, "brainMult": 1.1 }, "duration": 20 },
+        { "label": "🤝 先拉进社团：立即 +500 脑洞 +300 人气", "bonus": { "brainwave": 500, "popularity": 300 } }
+      ]
+    },
+    {
+      "id": "schoolDay",
+      "emoji": "🏮",
+      "title": "校庆日",
+      "desc": "全校都在围观——社长的手速就是招牌",
+      "kind": "good",
+      "weight": 2,
+      "phases": ["m0", "m1"],
+      "options": [
+        { "label": "📣 现场直播发传单：点击 +20%（18 秒）", "effect": { "clickMult": 1.2 }, "duration": 18 },
+        { "label": "🫶 蹭一波人流：立即 +400 人气", "bonus": { "popularity": 400 } }
+      ]
+    },
+    {
+      "id": "canteen",
+      "emoji": "🍱",
+      "title": "食堂神菜 · 外星人便当",
+      "desc": "食堂新品「外星人便当」，试吃员集体昏迷三分钟",
+      "kind": "good",
+      "weight": 2,
+      "phases": ["m0"],
+      "options": [
+        { "label": "🛸 组队试吃直播：人气 +15%（20 秒）", "effect": { "popMult": 1.15 }, "duration": 20 },
+        { "label": "🧃 打包囤货：立即 +700 人气", "bonus": { "popularity": 700 } }
+      ]
+    },
+    {
+      "id": "flyerStorm",
+      "emoji": "🌪️",
+      "title": "大风抢走传单",
+      "desc": "一阵妖风把整沓传单卷上了天，全校追着纸跑",
+      "kind": "bad",
+      "weight": 1,
+      "phases": ["m0"],
+      "options": [
+        { "label": "🌀 等风停：点击 -5%（12 秒）", "effect": { "clickMult": 0.95 }, "duration": 12 },
+        { "label": "🏃 追！：立即 -300 人气", "bonus": { "popularity": -300 } }
+      ]
+    },
+    {
+      "id": "sale",
+      "emoji": "🧾",
+      "title": "器材大甩卖",
+      "desc": "社团中心秒杀，机会稍纵即逝",
+      "kind": "good",
+      "weight": 2,
+      "phases": ["m1", "m2"],
+      "options": [
+        { "label": "🛒 进货囤起来：活动购买九折（20 秒）", "effect": { "discount": 0.1 }, "duration": 20 },
+        { "label": "💡 倒卖小赚一笔：立即 +900 脑洞", "bonus": { "brainwave": 900 } }
+      ]
+    },
+    {
+      "id": "midtermWeek",
+      "emoji": "📚",
+      "title": "期中考试周",
+      "desc": "图书馆爆满，全校卷王集体觉醒",
+      "kind": "good",
+      "weight": 2,
+      "phases": ["m1"],
+      "options": [
+        { "label": "🧠 学霸辅导班：脑洞 +15%（20 秒）", "effect": { "brainMult": 1.15 }, "duration": 20 },
+        { "label": "📝 卖复习笔记：立即 +900 脑洞", "bonus": { "brainwave": 900 } }
+      ]
+    },
+    {
+      "id": "flagCeremony",
+      "emoji": "🚩",
+      "title": "升旗仪式点名",
+      "desc": "广播里念了你们社团的名字，全校回头",
+      "kind": "good",
+      "weight": 1,
+      "phases": ["m1"],
+      "options": [
+        { "label": "📣 小跑上台致意：人气 +10% 脑洞 +10%（20 秒）", "effect": { "popMult": 1.1, "brainMult": 1.1 }, "duration": 20 },
+        { "label": "🙂 站直了目视前方：立即 +500 人气 +300 脑洞", "bonus": { "popularity": 500, "brainwave": 300 } }
+      ]
+    },
+    {
+      "id": "press",
+      "emoji": "📰",
+      "title": "校报报道",
+      "desc": "社团上了头条，趁热打铁还是落袋为安？",
+      "kind": "good",
+      "weight": 2,
+      "phases": ["m2"],
+      "options": [
+        { "label": "📢 全网推一波：影响力 +20%（20 秒）", "effect": { "influenceMult": 1.2 }, "duration": 20 },
+        { "label": "📋 官方回复帖：立即 +120 影响力", "bonus": { "influence": 120 } }
+      ]
+    },
+    {
+      "id": "investor",
+      "emoji": "🕴️",
+      "title": "神秘投资商到访",
+      "desc": "自称\u201c银河联邦商务代表\u201d的神秘人想赞助你们",
+      "kind": "good",
+      "weight": 2,
+      "phases": ["m2"],
+      "options": [
+        { "label": "🤝 接受赞助：立即 +5000 预算", "bonus": { "money": 5000 } },
+        { "label": "🌌 婉拒，格局打开：立即 +2000 影响力", "bonus": { "influence": 2000 } }
+      ]
+    },
+    {
+      "id": "tvInterview",
+      "emoji": "📹",
+      "title": "市电视台来访",
+      "desc": "想拍一集\u201c校园里的科幻社团\u201d纪录片",
+      "kind": "good",
+      "weight": 2,
+      "phases": ["m2"],
+      "options": [
+        { "label": "🎬 上镜！：影响力 +20%（20 秒）", "effect": { "influenceMult": 1.2 }, "duration": 20 },
+        { "label": "📝 低调递资料：立即 +250 影响力", "bonus": { "influence": 250 } }
+      ]
+    },
+    {
+      "id": "drain",
+      "emoji": "🤖",
+      "title": "机器人社挖角",
+      "desc": "隔壁 AI 又来挖人，得想个办法",
+      "kind": "bad",
+      "weight": 1,
+      "phases": ["m2"],
+      "options": [
+        { "label": "🧊 无视：脑洞 -5%（12 秒）", "effect": { "brainMult": 0.95 }, "duration": 12 },
+        { "label": "🍕 请客留人：立即 -400 脑洞", "bonus": { "brainwave": -400 } }
+      ]
+    },
+    {
+      "id": "poach",
+      "emoji": "🎣",
+      "title": "外校天体社挖角",
+      "desc": "他们开出的条件好到社长本人心动了一瞬（就是社长本人）",
+      "kind": "bad",
+      "weight": 1,
+      "phases": ["m2"],
+      "options": [
+        { "label": "🛡️ 不动如山（无损失）", "bonus": {} },
+        { "label": "🍲 用火锅留人：立即 -800 脑洞", "bonus": { "brainwave": -800 } }
+      ]
+    },
+    {
+      "id": "blackout",
+      "emoji": "🔌",
+      "title": "全楼停电",
+      "desc": "《星际穿越》只黑屏了，活动室里乱成一团",
+      "kind": "bad",
+      "weight": 1,
+      "phases": ["m0", "m1"],
+      "options": [
+        { "label": "🌙 夜话会：人气 -5%（12 秒）", "effect": { "popMult": 0.95 }, "duration": 12 },
+        { "label": "🎇 点蜡烛摆摊：立即 -300 人气", "bonus": { "popularity": -300 } }
+      ]
+    }
+  ],
+  "bigChoices": [
+    {
+      "id": "crash",
+      "emoji": "💥",
+      "title": "演示环节崩了！",
+      "desc": "筹备组卡到屏幕白屏，台下笑成一片",
+      "options": [
+        { "label": "🎭 即兴脱口秀救场", "bonus": 25 },
+        { "label": "😰 假装是演出效果", "bonus": 10 },
+        { "label": "🛠️ 现场修 bug", "bonus": 18 }
+      ]
+    },
+    {
+      "id": "cat",
+      "emoji": "🐱",
+      "title": "场地猫咪上台了",
+      "desc": "活动室宿管猫大摇大摆走上主舞台",
+      "options": [
+        { "label": "🐾 让它当吉祥物互动", "bonus": 30 },
+        { "label": "🙅 抱回后台", "bonus": 8 }
+      ]
+    },
+    {
+      "id": "enjoy",
+      "emoji": "🎉",
+      "title": "观众疯狂打 call",
+      "desc": "呼声太高，请你们加演一段",
+      "options": [
+        { "label": "🔥 加演！", "bonus": 28 },
+        { "label": "😅 稳定发挥就好", "bonus": 12 }
+      ]
+    },
+    {
+      "id": "spon",
+      "emoji": "🤑",
+      "title": "赞助商临时加码",
+      "desc": "猫咖老板想追加赞助，条件是要给猫一个镜头",
+      "options": [
+        { "label": "✅ 接受！猫猫出镜！", "bonus": 20 },
+        { "label": "❌ 谢绝猫权干预", "bonus": 15 }
+      ]
+    },
+    {
+      "id": "lights",
+      "emoji": "🔦",
+      "title": "灯光师罢工",
+      "desc": "灯光师突然闹脾气，舞台一片漆黑",
+      "options": [
+        { "label": "🔦 用手机手电筒打光", "bonus": 22 },
+        { "label": "🗣️ 广播全体打开手电", "bonus": 16 }
+      ]
+    },
+    {
+      "id": "weird",
+      "emoji": "🛸",
+      "title": "神秘人要求上台",
+      "desc": "一个自称\u201c银河联盟审计员\u201d的人想上台讲话",
+      "options": [
+        { "label": "🎤 让他说！宇宙级流量！", "bonus": 35 },
+        { "label": "💂 礼貌请回", "bonus": 10 }
+      ]
+    },
+    {
+      "id": "rain",
+      "emoji": "🌧️",
+      "title": "下暴雨了",
+      "desc": "校外观众被雨困住，活动室门口水漫金山",
+      "options": [
+        { "label": "☔ 组织伞阵迎接", "bonus": 24 },
+        { "label": "📢 线上同步直播", "bonus": 20 }
+      ]
+    },
+    {
+      "id": "judge",
+      "emoji": "🤔",
+      "title": "评委意见分歧",
+      "desc": "三位评委为年度最佳科幻社吵了起来",
+      "options": [
+        { "label": "🤝 促成评委联名奖", "bonus": 30 },
+        { "label": "🎯 交给观众投票", "bonus": 18 }
+      ]
+    },
+    {
+      "id": "spaceJunk",
+      "emoji": "🌠",
+      "title": "天降太空垃圾",
+      "desc": "筹备棚被\u201c天降陨石\u201d砸了——其实是隔壁楼的外卖盒",
+      "options": [
+        { "label": "♻️ 回收当主题装饰", "bonus": 25 },
+        { "label": "📞 打给环保局投诉", "bonus": 10 },
+        { "label": "🎬 当场拍段\u201c灭霸手套\u201d短视频", "bonus": 20 }
+      ]
+    },
+    {
+      "id": "principal",
+      "emoji": "🧐",
+      "title": "校长带队视察",
+      "desc": "校长带着检查组从天而降，快门声此起彼伏",
+      "options": [
+        { "label": "🫖 献上咖啡和答辩 PPT", "bonus": 30 },
+        { "label": "🎤 请校长登台讲话十分钟", "bonus": 15 },
+        { "label": "🫥 假装剧组在拍戏", "bonus": 8 }
+      ]
+    },
+    {
+      "id": "catcafe",
+      "emoji": "🥤",
+      "title": "猫咖老板想投放广告",
+      "desc": "校门口猫咖看上你们的客流，想塞一条猫猫广告",
+      "options": [
+        { "label": "🐱 成交！猫猫出镜！", "bonus": 25 },
+        { "label": "😎 让社长亲自代言", "bonus": 15 },
+        { "label": "🙅 婉拒猫权干预", "bonus": 12 }
+      ]
+    },
+    {
+      "id": "fakeGear",
+      "emoji": "🎛️",
+      "title": "音响是假货！",
+      "desc": "租赁的音响临到开场全沙哑，举报人正举着发票冷笑",
+      "options": [
+        { "label": "🎶 现场阿卡贝拉救场", "bonus": 22 },
+        { "label": "📱 全场手机外放同步", "bonus": 18 },
+        { "label": "🫣 装死不承认", "bonus": 8 }
+      ]
+    },
+    {
+      "id": "trackRunner",
+      "emoji": "🏃",
+      "title": "体育生误入赛场",
+      "desc": "田径队猛男一脚踩进主舞台，气氛剑拔弩张",
+      "options": [
+        { "label": "🏁 临时加赛\u201c银河追逐战\u201d", "bonus": 24 },
+        { "label": "🙏 礼貌请回跑道", "bonus": 10 }
+      ]
+    },
+    {
+      "id": "powerCut",
+      "emoji": "🍜",
+      "title": "食堂断电了",
+      "desc": "全校断电欢呼，饿狼们闻着味逼近活动室",
+      "options": [
+        { "label": "🍜 免费泡面福利摊", "bonus": 26 },
+        { "label": "🌙 星空烛光食堂氛围", "bonus": 18 },
+        { "label": "📱 呼叫外卖补贴", "bonus": 14 }
+      ]
+    },
+    {
+      "id": "twin",
+      "emoji": "🌀",
+      "title": "两个\u201c我\u201d同时出现",
+      "desc": "台上多了一个一模一样的社长，谁是真身竟无法证伪",
+      "options": [
+        { "label": "👯 一起致谢！双倍在场感", "bonus": 32 },
+        { "label": "🫥 假装没看见", "bonus": 12 }
+      ]
+    },
+    {
+      "id": "etCall",
+      "emoji": "📞",
+      "title": "银河联盟来电话",
+      "desc": "自称银河百科编委会的星际热线打进了活动室电话",
+      "options": [
+        { "label": "📣 公放给全场听", "bonus": 30 },
+        { "label": "🙏 感谢支持，挂断", "bonus": 10 },
+        { "label": "🎧 录音当彩蛋", "bonus": 20 }
+      ]
+    }
+  ]
+}
