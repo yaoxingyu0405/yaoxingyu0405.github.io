@@ -11,10 +11,19 @@
         "先做最重要的事：点下面的 📄「社长发传单」，把人气拉起来——人气够多，就会有人来入社！"
       ],
       "options": [
-        { "label": "🗣️ 这就去发传单！", "next": "whaleBook" },
-        { "label": "🎵 大肥鱼，唱首歌给你听", "next": "whaleSing" }
+        {
+          "label": "🗣️ 这就去发传单！",
+          "next": "whaleBook"
+        },
+        {
+          "label": "🎵 大肥鱼，唱首歌给你听",
+          "next": "whaleSing"
+        }
       ],
-      "trigger": { "type": "phase", "id": "m0" }
+      "trigger": {
+        "type": "phase",
+        "id": "m0"
+      }
     },
     {
       "id": "whaleBook",
@@ -35,7 +44,9 @@
         "路过的同学纷纷驻足围观，表情从困惑变成震撼，最后变成录像。",
         "🎶 人气 +150！"
       ],
-      "effects": { "popularity": 150 },
+      "effects": {
+        "popularity": 150
+      },
       "btnLabel": "闭嘴吧你…"
     },
     {
@@ -49,10 +60,22 @@
         "作为新手礼包，让我帮你变一位社员出来吧。"
       ],
       "options": [
-        { "label": "领取 AI 社员 +1 🧑‍🚀", "effects": { "awardMembers": 1 } },
-        { "label": "你能不能直接变 100 个社员出来？", "next": "whaleNo" }
+        {
+          "label": "领取 AI 社员 +1 🧑‍🚀",
+          "effects": {
+            "awardMembers": 1
+          }
+        },
+        {
+          "label": "你能不能直接变 100 个社员出来？",
+          "next": "whaleNo"
+        }
       ],
-      "trigger": { "type": "activityLv", "id": "reading", "min": 1 }
+      "trigger": {
+        "type": "activityLv",
+        "id": "reading",
+        "min": 1
+      }
     },
     {
       "id": "whaleNo",
@@ -63,7 +86,9 @@
         "但可以送你一个知识点：「活动等级越高，产出越多」——这句话值 100 人气，收好了。",
         "🎶 人气 +100！"
       ],
-      "effects": { "popularity": 100 },
+      "effects": {
+        "popularity": 100
+      },
       "btnLabel": "学到了…"
     },
     {
@@ -76,10 +101,22 @@
         "「社长事务」的大按钮就是你的办公桌！"
       ],
       "options": [
-        { "label": "开始处理社长事务 📋", "next": "whaleAffairs", "effects": { "unlockAffairs": true } },
-        { "label": "先等等，传单小队是什么？", "next": "whaleSquad" }
+        {
+          "label": "开始处理社长事务 📋",
+          "next": "whaleAffairs",
+          "effects": {
+            "unlockAffairs": true
+          }
+        },
+        {
+          "label": "先等等，传单小队是什么？",
+          "next": "whaleSquad"
+        }
       ],
-      "trigger": { "type": "autoClickers", "min": 1 }
+      "trigger": {
+        "type": "autoClickers",
+        "min": 1
+      }
     },
     {
       "id": "whaleAffairs",
@@ -112,10 +149,19 @@
         "🤝 外部联络：联合行动换 buff、换资源，好感升级还能解锁新活动、升级现有活动！"
       ],
       "options": [
-        { "label": "🏛️ 先建个财务部！", "next": "whaleDept" },
-        { "label": "🎰 我要抽卡抽到传说！", "next": "whaleGacha" }
+        {
+          "label": "🏛️ 先建个财务部！",
+          "next": "whaleDept"
+        },
+        {
+          "label": "🎰 我要抽卡抽到传说！",
+          "next": "whaleGacha"
+        }
       ],
-      "trigger": { "type": "phase", "id": "m2" }
+      "trigger": {
+        "type": "phase",
+        "id": "m2"
+      }
     },
     {
       "id": "whaleDept",
@@ -143,13 +189,23 @@
       "title": "活跃度过半！",
       "lines": [
         "（大肥鱼趴在缸边盯了你的面板很久。）活跃度 60 分了，快到 100 就学年考核！",
-        "这条船……不对，这个小社团，离正式起航只差一哆嗦。"
+        "这条船……不对，这个小社团，离正式起航只差一哆嗦。",
+        "（小声补充：考核之前记得攒 💡 脑洞招一支「👥 传单小队」——年中审核过了，社长事务和 💰📣🏠 三资源才开。）"
       ],
       "options": [
-        { "label": "我这就去办活动冲分！", "next": "whaleM1Tip" },
-        { "label": "怎么冲分最快？", "next": "whaleM1Tip" }
+        {
+          "label": "我这就去办活动冲分！",
+          "next": "whaleM1Tip"
+        },
+        {
+          "label": "怎么冲分最快？",
+          "next": "whaleM1Tip"
+        }
       ],
-      "trigger": { "type": "rating", "min": 60 }
+      "trigger": {
+        "type": "rating",
+        "min": 60
+      }
     },
     {
       "id": "whaleM1Tip",
@@ -171,10 +227,23 @@
         "（社长的后颈窝沁出冷汗：从没有人对一部没放完的电影这么热情过。）"
       ],
       "options": [
-        { "label": "🎬 放《沙丘》二刷！", "next": "whaleMovie2" },
-        { "label": "✨ 把黑屏定为官方彩蛋", "effects": { "popularity": 300 }, "next": "whaleMovie3" }
+        {
+          "label": "🎬 放《沙丘》二刷！",
+          "next": "whaleMovie2"
+        },
+        {
+          "label": "✨ 把黑屏定为官方彩蛋",
+          "effects": {
+            "popularity": 300
+          },
+          "next": "whaleMovie3"
+        }
       ],
-      "trigger": { "type": "activityLv", "id": "movie", "min": 1 }
+      "trigger": {
+        "type": "activityLv",
+        "id": "movie",
+        "min": 1
+      }
     },
     {
       "id": "whaleMovie2",
@@ -191,8 +260,8 @@
       "emoji": "✨",
       "title": "黑洞视界 · 彩蛋大成功",
       "lines": [
-        "彩蛋计划成功！隔壁班来问\u201c黑屏\u201d是什么，你们回答：那是黑洞视界。",
-        "越来越多人想来亲眼确认这个\u201c视界\u201d，观影会人气大涨！",
+        "彩蛋计划成功！隔壁班来问“黑屏”是什么，你们回答：那是黑洞视界。",
+        "越来越多人想来亲眼确认这个“视界”，观影会人气大涨！",
         "🎶 人气 +300！"
       ],
       "btnLabel": "彩蛋成功！🖤"
@@ -203,13 +272,29 @@
       "title": "桌游夜 · 银河卡车司机",
       "lines": [
         "《银河卡车司机》战到后半夜！输的人负责明天搬桌子，赢的人现在已经开始输了。",
-        "活动室里瓜子壳堆成一座小山——社长宣布这就是社团的第一个\u201c地貌建筑\u201d。"
+        "活动室里瓜子壳堆成一座小山——社长宣布这就是社团的第一个“地貌建筑”。"
       ],
       "options": [
-        { "label": "🏁 加赛一场通宵局！", "effects": { "brainwave": 500 }, "next": "whaleBoardBuy" },
-        { "label": "😴 宣布本局到此为止", "effects": { "popularity": 150 }, "next": "whaleBoardNorm" }
+        {
+          "label": "🏁 加赛一场通宵局！",
+          "effects": {
+            "brainwave": 500
+          },
+          "next": "whaleBoardBuy"
+        },
+        {
+          "label": "😴 宣布本局到此为止",
+          "effects": {
+            "popularity": 150
+          },
+          "next": "whaleBoardNorm"
+        }
       ],
-      "trigger": { "type": "activityLv", "id": "board", "min": 1 }
+      "trigger": {
+        "type": "activityLv",
+        "id": "board",
+        "min": 1
+      }
     },
     {
       "id": "whaleBoardBuy",
@@ -242,10 +327,19 @@
         "大肥鱼激动得从鱼缸里蹦了出来：研发游戏大赛、办音乐会，赢取大额评分冲五星！"
       ],
       "options": [
-        { "label": "🚀 我要立刻研发 GameJam！", "next": "m15Ready" },
-        { "label": "🫠 系统太多了，我先缓缓", "next": "m15Slow" }
+        {
+          "label": "🚀 我要立刻研发 GameJam！",
+          "next": "m15Ready"
+        },
+        {
+          "label": "🫠 系统太多了，我先缓缓",
+          "next": "m15Slow"
+        }
       ],
-      "trigger": { "type": "rating", "min": 500 }
+      "trigger": {
+        "type": "rating",
+        "min": 500
+      }
     },
     {
       "id": "m15Ready",
@@ -266,7 +360,9 @@
         "「休息够了，记得回来办大型活动。」它说，「评分不等人，星星也不等人。」",
         "🎶 人气 +500！"
       ],
-      "effects": { "popularity": 500 },
+      "effects": {
+        "popularity": 500
+      },
       "btnLabel": "回头一定办！🌌"
     },
     {
@@ -275,21 +371,36 @@
       "title": "大肥鱼的忠告 · 千人里程碑",
       "lines": [
         "检测到社员突破 1000 人！我是社委会特派 AI 助手——蓝色大肥鱼。",
-        "（泡泡噼里啪啦地冒。）注意了：从今往后，\u201c拉人头\u201d对社团评分的贡献会大幅减少——评价体系更看重活动质量了。",
+        "（泡泡噼里啪啦地冒。）注意了：从今往后，“拉人头”对社团评分的贡献会大幅减少——评价体系更看重活动质量了。",
         "想冲击更高的星级？别光顾着招人，去 🎪 大型活动页把 GameJam 办起来！"
       ],
       "options": [
-        { "label": "🚀 明白！去办大型活动！", "effects": { "venue": 400 }, "next": "whale1000Gift" },
-        { "label": "👥 再让我招一批人！", "effects": { "popularity": 800 }, "next": "whale1000Sad" }
+        {
+          "label": "🚀 明白！去办大型活动！",
+          "effects": {
+            "venue": 400
+          },
+          "next": "whale1000Gift"
+        },
+        {
+          "label": "👥 再让我招一批人！",
+          "effects": {
+            "popularity": 800
+          },
+          "next": "whale1000Sad"
+        }
       ],
-      "trigger": { "type": "members", "min": 1000 }
+      "trigger": {
+        "type": "members",
+        "min": 1000
+      }
     },
     {
       "id": "whale1000Gift",
       "emoji": "🏠",
       "title": "大肥鱼的场地赞助",
       "lines": [
-        "「看你这么有觉悟，我偷偷批了 400 场地！」大肥鱼用鳍比了个\u201c悄悄\u201d的手势。",
+        "「看你这么有觉悟，我偷偷批了 400 场地！」大肥鱼用鳍比了个“悄悄”的手势。",
         "🏠 场地 +400！GameJam 的启动场地正好够用了。（别问批文在哪，不存在。）"
       ],
       "btnLabel": "谢谢大肥鱼！🐋"
@@ -314,10 +425,25 @@
         "校报记者扛着长枪短炮冲了进来，快门声像机关枪。"
       ],
       "options": [
-        { "label": "📰 接受校报专访！", "effects": { "influence": 500 }, "next": "whale2000" },
-        { "label": "🐋 让大肥鱼上封面！", "effects": { "brainwave": 800 }, "next": "whale2000b" }
+        {
+          "label": "📰 接受校报专访！",
+          "effects": {
+            "influence": 500
+          },
+          "next": "whale2000"
+        },
+        {
+          "label": "🐋 让大肥鱼上封面！",
+          "effects": {
+            "brainwave": 800
+          },
+          "next": "whale2000b"
+        }
       ],
-      "trigger": { "type": "rating", "min": 2000 }
+      "trigger": {
+        "type": "rating",
+        "min": 2000
+      }
     },
     {
       "id": "whale2000",
@@ -335,7 +461,7 @@
       "emoji": "📸",
       "title": "大肥鱼封面照",
       "lines": [
-        "大肥鱼摆出了 18 种拍摄角度，最终这张\u201c鱼缸沉思照\u201d成了校报封面。",
+        "大肥鱼摆出了 18 种拍摄角度，最终这张“鱼缸沉思照”成了校报封面。",
         "意外之喜：地下读者协会联系你们，想收购这张照片做周边。",
         "💡 脑洞 +800！"
       ],
@@ -350,10 +476,25 @@
         "瀚海奇点已经是全校乃至全城最强的科幻社团。距离谢顿的联络，只差一步。"
       ],
       "options": [
-        { "label": "🎉 庆祝！", "effects": { "influence": 1000 }, "next": "whaleEnd" },
-        { "label": "🧠 冷静分析这壮观的评分", "effects": { "brainwave": 2000 }, "next": "m2EndAnal" }
+        {
+          "label": "🎉 庆祝！",
+          "effects": {
+            "influence": 1000
+          },
+          "next": "whaleEnd"
+        },
+        {
+          "label": "🧠 冷静分析这壮观的评分",
+          "effects": {
+            "brainwave": 2000
+          },
+          "next": "m2EndAnal"
+        }
       ],
-      "trigger": { "type": "rating", "min": 10000 }
+      "trigger": {
+        "type": "rating",
+        "min": 10000
+      }
     },
     {
       "id": "whaleEnd",
@@ -361,10 +502,11 @@
       "title": "全城庆祝",
       "lines": [
         "放礼花！大肥鱼用泡泡吹出了一整个银河系，飘满了活动室天花板。",
-        "路过的教务处主任探头看了一眼，默默把\u201c最优秀社团\u201d的牌子挂在了门口。",
+        "路过的教务处主任探头看了一眼，默默把“最优秀社团”的牌子挂在了门口。",
         "📣 影响力 +1000！"
       ],
-      "btnLabel": "干杯！🍻"
+      "btnLabel": "干杯！🍻",
+      "next": "seldonCall"
     },
     {
       "id": "m2EndAnal",
@@ -375,7 +517,714 @@
         "「剩下 0.3%：谢顿提前来联络你。」",
         "💡 脑洞 +2000！"
       ],
-      "btnLabel": "记住这个 0.3%！"
+      "btnLabel": "记住这个 0.3%！",
+      "next": "seldonCall"
+    },
+    {
+      "id": "seldonCall",
+      "emoji": "📡",
+      "title": "谢顿的通讯",
+      "lines": [
+        "（活动室的投影仪自己亮了。屏幕上是一位戴圆眼镜的老者，背景是木星轨道上的环形空间站。）",
+        "「瀚海奇点，你们是目前地球上最活跃的科幻社团。」他扶了扶眼镜，「这不是夸奖，是筛选结果。」",
+        "「总部已迁至木星轨道空间站。收集全银河科幻小说的任务，交由你们执行——第一艘文明探针，请自行建造。」"
+      ],
+      "options": [
+        {
+          "label": "🛰️ 接受任务，登舰！",
+          "next": "seldonConvert"
+        },
+        {
+          "label": "📋 能先确认一下待遇吗？",
+          "next": "seldonDeal"
+        }
+      ]
+    },
+    {
+      "id": "seldonDeal",
+      "emoji": "📋",
+      "title": "待遇说明 · 附件三",
+      "lines": [
+        "「薪酬：无。经费：无。地球支部编制：无。」谢顿念得很快，像在念免责声明。",
+        "「你能得到的是：一个空间站、一群外星读者的期待，以及心理史学意义上的必然性。」",
+        "「顺带一提，附件三第 7 条写明：不接受任务，也不影响你们继续挂机。」"
+      ],
+      "options": [
+        {
+          "label": "……那就登舰吧。",
+          "next": "seldonConvert"
+        }
+      ]
+    },
+    {
+      "id": "seldonConvert",
+      "emoji": "🔄",
+      "title": "资源结算 · 地球支部清算",
+      "lines": [
+        "登舰前，地球支部的账目被一次性清算：脑洞折算为创造力（1 : 10），人气折算为影响力，社员转为成员。",
+        "预算、场地与旧影响力全部留在活动室，由下一届社长继承（他们大概会当成宝）。",
+        "空间站配给：能量、物质、制造力。三项均为零。谢顿称之为「一穷二白的浪漫」。"
+      ],
+      "btnLabel": "进入空间站 🛰️",
+      "effects": {
+        "galaxy": true
+      },
+      "next": "stationArrive"
+    },
+    {
+      "id": "stationArrive",
+      "emoji": "🛰️",
+      "title": "木星轨道 · 空间站 M2.5",
+      "lines": [
+        "空间站只有一个舱室、一台旧终端，以及一份《文明探针建造手册（缺页版）》。",
+        "建造探针需要：能量 ⚡、物质 🪨、制造力 🔧。先建太阳能阵列与采矿舱，再谈曲率引擎。",
+        "探针启航之日，就是你向银河递交的第一份名片。"
+      ],
+      "btnLabel": "开工！🔧"
+    },
+    {
+      "id": "contact_earth",
+      "emoji": "📡",
+      "title": "联络建立 · 地球人类共同体",
+      "lines": [
+        "地球那边的回信只有一句：「钥匙在花盆底下，别把活动室弄乱。」",
+        "（随信附一份《地球科幻简史》，书脊上写着\"仅限内部流传\"。）"
+      ],
+      "options": [
+        {
+          "label": "📖 收下简史",
+          "effects": {
+            "civFriendship": {
+              "earth": 5
+            }
+          }
+        },
+        {
+          "label": "🛰️ 先谈正事",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "earth",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_earth",
+      "emoji": "📚",
+      "title": "《地球科幻全集》入库",
+      "lines": [
+        "整套书坐货运舱回来，最上面那本是手抄本，落款是\"上一届社长\"。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "earth"
+      }
+    },
+    {
+      "id": "contact_trisolaris",
+      "emoji": "📡",
+      "title": "联络建立 · 三体人",
+      "lines": [
+        "对方的通讯只有三个字，重复了一千四百次：「不要回答。」",
+        "（我们回答了一句\"收到\"。对面沉默了 11 分钟。）"
+      ],
+      "options": [
+        {
+          "label": "🤐 保证不再回答",
+          "effects": {
+            "civFriendship": {
+              "trisolaris": 5
+            }
+          }
+        },
+        {
+          "label": "📡 再问一句\"为什么\"",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "trisolaris",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_trisolaris",
+      "emoji": "📚",
+      "title": "《三体》入库",
+      "lines": [
+        "扉页夹着一张便签：「这一本，算我们主动回答的。」"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "trisolaris"
+      }
+    },
+    {
+      "id": "contact_vulcan",
+      "emoji": "📡",
+      "title": "联络建立 · 瓦肯人",
+      "lines": [
+        "他们用了 40 分钟论证\"要不要打招呼\"，结论是\"打招呼在逻辑上是冗余的\"。",
+        "（然后还是打了。）"
+      ],
+      "options": [
+        {
+          "label": "🖖 回以瓦肯礼",
+          "effects": {
+            "civFriendship": {
+              "vulcan": 5
+            }
+          }
+        },
+        {
+          "label": "📝 提议双方都少说点",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "vulcan",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_vulcan",
+      "emoji": "📚",
+      "title": "《瓦肯科幻选》入库",
+      "lines": [
+        "书里每页都有人用铅笔写反驳意见，字迹工整得像印刷体。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "vulcan"
+      }
+    },
+    {
+      "id": "contact_cats",
+      "emoji": "📡",
+      "title": "联络建立 · 猫文明",
+      "lines": [
+        "他们的第一句外交辞令是：「我们真的有猫。」",
+        "第二句是：「你们的箱子能装下几只？」"
+      ],
+      "options": [
+        {
+          "label": "📦 如实回答\"很多\"",
+          "effects": {
+            "civFriendship": {
+              "cats": 5
+            }
+          }
+        },
+        {
+          "label": "🐱 反问\"你们有几只\"",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "cats",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_cats",
+      "emoji": "📚",
+      "title": "《猫的战锤》入库",
+      "lines": [
+        "全书 40 万字，39 万字在描写睡觉，最后 1 万字是醒来伸懒腰。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "cats"
+      }
+    },
+    {
+      "id": "contact_klingon",
+      "emoji": "📡",
+      "title": "联络建立 · 克林贡帝国",
+      "lines": [
+        "谈判前他们要求\"先比划一下\"。比划完，双方都躺了十分钟。",
+        "「很好，」他们爬起来说，「你们值得谈正事。」"
+      ],
+      "options": [
+        {
+          "label": "⚔️ 约定改日再比",
+          "effects": {
+            "civFriendship": {
+              "klingon": 5
+            }
+          }
+        },
+        {
+          "label": "🍵 提议改成喝茶",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "klingon",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_klingon",
+      "emoji": "📚",
+      "title": "《克林贡史诗》入库",
+      "lines": [
+        "有朗读版，全长 400 小时，全程在吼；随书附赠耳塞一副。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "klingon"
+      }
+    },
+    {
+      "id": "contact_arrakis",
+      "emoji": "📡",
+      "title": "联络建立 · 厄拉科斯香料商团",
+      "lines": [
+        "领航员吃下香料后盯着我们的星图看了很久，然后说：「你们的航线，祖先也走过。」",
+        "（他说的是祖先，不是前辈。我们没敢细问。）"
+      ],
+      "options": [
+        {
+          "label": "🍂 请求一份航路图",
+          "effects": {
+            "civFriendship": {
+              "arrakis": 5
+            }
+          }
+        },
+        {
+          "label": "💧 先谈香料价格",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "arrakis",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_arrakis",
+      "emoji": "📚",
+      "title": "《沙丘》入库",
+      "lines": [
+        "书页间夹着一粒沙。抖了三次，它还在。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "arrakis"
+      }
+    },
+    {
+      "id": "contact_solaria",
+      "emoji": "📡",
+      "title": "联络建立 · 索拉利机器人庄园",
+      "lines": [
+        "接线的机器人礼貌地问：「请问来访者是人类，还是可维护实体？」",
+        "（我们选了第二项，通过了。）"
+      ],
+      "options": [
+        {
+          "label": "🤖 承认自己是可维护实体",
+          "effects": {
+            "civFriendship": {
+              "solaria": 5
+            }
+          }
+        },
+        {
+          "label": "🧑‍🚀 坚持说自己是人类",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "solaria",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_solaria",
+      "emoji": "📚",
+      "title": "《机器人三定律小说集》入库",
+      "lines": [
+        "第 4 条定律被涂黑了。查询涂黑记录：不存在。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "solaria"
+      }
+    },
+    {
+      "id": "contact_terminus",
+      "emoji": "📡",
+      "title": "联络建立 · 端点星图书馆",
+      "lines": [
+        "分馆管理员递来登记表：「填一下你们文明预计的存续时间。」",
+        "（表格第二栏写着\"逾期不还按光年计费\"。）"
+      ],
+      "options": [
+        {
+          "label": "📝 填\"很久\"",
+          "effects": {
+            "civFriendship": {
+              "terminus": 5
+            }
+          }
+        },
+        {
+          "label": "🤝 提议改成互借",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "terminus",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_terminus",
+      "emoji": "📚",
+      "title": "《银河百科全书残卷》入库",
+      "lines": [
+        "残卷正好是\"科幻卷\"那一册。管理员说：这不是巧合，是排架子的结果。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "terminus"
+      }
+    },
+    {
+      "id": "contact_questlab",
+      "emoji": "📡",
+      "title": "联络建立 · 星际求索实验室",
+      "lines": [
+        "他们的第一条讯息是：「请确认社长本体是否为一条蓝色大肥鱼。」",
+        "（我们回复\"不是\"。他们回复\"已记录，待复核\"。）"
+      ],
+      "options": [
+        {
+          "label": "🐋 顺着说\"算是吧\"",
+          "effects": {
+            "civFriendship": {
+              "questlab": 5
+            }
+          }
+        },
+        {
+          "label": "🧑‍🚀 严肃否认",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "questlab",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_questlab",
+      "emoji": "📚",
+      "title": "《泡泡里的银河》入库",
+      "lines": [
+        "作者署名：\"蓝色大肥鱼（口述）\"。我们决定不追究。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "questlab"
+      }
+    },
+    {
+      "id": "contact_greg",
+      "emoji": "📡",
+      "title": "联络建立 · 格雷星际工业集团",
+      "lines": [
+        "对方发来 3000 页合作协议，其中 2999 页是流程图。",
+        "唯一一页文字写着：「预付款到账，流程图自动生效。」"
+      ],
+      "options": [
+        {
+          "label": "📄 直接签",
+          "effects": {
+            "civFriendship": {
+              "greg": 5
+            }
+          }
+        },
+        {
+          "label": "🔍 要求先看流程图",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "greg",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_greg",
+      "emoji": "📚",
+      "title": "《重工业安全手册》入库",
+      "lines": [
+        "流程图单独装箱，占了三个舱段。收货时压坏了一个。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "greg"
+      }
+    },
+    {
+      "id": "contact_trantor",
+      "emoji": "📡",
+      "title": "联络建立 · 川陀 · 银河帝国",
+      "lines": [
+        "帝国礼宾司核实了我们的资质，用时 6 小时，其中 5 小时 50 分在排队。",
+        "「恭喜，」他们说，「你们现在是帝国承认的、编号 4,271,908 的边缘社团。」"
+      ],
+      "options": [
+        {
+          "label": "👑 感谢帝国认可",
+          "effects": {
+            "civFriendship": {
+              "trantor": 5
+            }
+          }
+        },
+        {
+          "label": "📋 询问编号有没有更靠前的",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "trantor",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_trantor",
+      "emoji": "📚",
+      "title": "《帝国编年史》入库",
+      "lines": [
+        "最后一章标题是「帝国永不衰落」。后面还有 600 页附录。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "trantor"
+      }
+    },
+    {
+      "id": "contact_coruscant",
+      "emoji": "📡",
+      "title": "联络建立 · 科洛桑",
+      "lines": [
+        "档案馆管理员比档案馆还古老。她看了我们一眼：「你们不属于这里。」",
+        "「但也不属于别处，」她补了一句，「那就进来吧。」"
+      ],
+      "options": [
+        {
+          "label": "📚 请求查阅档案",
+          "effects": {
+            "civFriendship": {
+              "coruscant": 5
+            }
+          }
+        },
+        {
+          "label": "🛰️ 先递上收录物清单",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "coruscant",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_coruscant",
+      "emoji": "📚",
+      "title": "《绝地武士传奇》入库",
+      "lines": [
+        "管理员终于允许开灯了。理由是\"反正你们也不怕光\"。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "coruscant"
+      }
+    },
+    {
+      "id": "contact_magrathea",
+      "emoji": "📡",
+      "title": "联络建立 · 玛格里西亚行星制造厂",
+      "lines": [
+        "销售代表看了一眼地球的照片：「这是我们早期的残次品。」",
+        "「不过，」他补充，「残次品能写信给我们，说明残次得挺成功。」"
+      ],
+      "options": [
+        {
+          "label": "🎭 询问定制价格",
+          "effects": {
+            "civFriendship": {
+              "magrathea": 5
+            }
+          }
+        },
+        {
+          "label": "🌍 为地球辩护两句",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "magrathea",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_magrathea",
+      "emoji": "📚",
+      "title": "《银河系漫游指南》入库",
+      "lines": [
+        "扉页只有一行字：42。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "magrathea"
+      }
+    },
+    {
+      "id": "contact_integral",
+      "emoji": "📡",
+      "title": "联络建立 · 信息统合思念体",
+      "lines": [
+        "它们没有\"说话\"，只是让我们突然想起了很多本来想不起来的事。",
+        "其中包括：社团活动室的钥匙其实一直在我们口袋里。"
+      ],
+      "options": [
+        {
+          "label": "🌌 请求观测许可",
+          "effects": {
+            "civFriendship": {
+              "integral": 5
+            }
+          }
+        },
+        {
+          "label": "🧠 要求把记忆还回来",
+          "effects": {
+            "influence": 800
+          }
+        }
+      ],
+      "trigger": {
+        "type": "civ",
+        "id": "integral",
+        "min": 1
+      }
+    },
+    {
+      "id": "novel_integral",
+      "emoji": "📚",
+      "title": "《观测数据全集》入库",
+      "lines": [
+        "它们说这不算小说，只是人类观测者的冗余部分。我们照收不误。"
+      ],
+      "btnLabel": "收录进百科全书 📖",
+      "effects": {
+        "influence": 2000
+      },
+      "trigger": {
+        "type": "novel",
+        "id": "integral"
+      }
     }
   ],
   "randomEvents": [
@@ -386,10 +1235,25 @@
       "desc": "大家都约起来补稿了，如何利用这一波？",
       "kind": "good",
       "weight": 3,
-      "phases": ["m0", "m1", "m2"],
+      "phases": [
+        "m0",
+        "m1",
+        "m2"
+      ],
       "options": [
-        { "label": "📝 大家一起通宵：脑洞 +15%（20 秒）", "effect": { "brainMult": 1.15 }, "duration": 20 },
-        { "label": "💰 卖点子速记：立即 +800 脑洞", "bonus": { "brainwave": 800 } }
+        {
+          "label": "📝 大家一起通宵：脑洞 +15%（20 秒）",
+          "effect": {
+            "brainMult": 1.15
+          },
+          "duration": 20
+        },
+        {
+          "label": "💰 卖点子速记：立即 +800 脑洞",
+          "bonus": {
+            "brainwave": 800
+          }
+        }
       ]
     },
     {
@@ -399,10 +1263,24 @@
       "desc": "猫又接管了读书角，围观群众挤满走廊",
       "kind": "good",
       "weight": 3,
-      "phases": ["m0", "m1"],
+      "phases": [
+        "m0",
+        "m1"
+      ],
       "options": [
-        { "label": "🐾 让猫当吉祥物：人气 +15%（20 秒）", "effect": { "popMult": 1.15 }, "duration": 20 },
-        { "label": "🎟️ 猫毛周边速售：立即 +600 人气", "bonus": { "popularity": 600 } }
+        {
+          "label": "🐾 让猫当吉祥物：人气 +15%（20 秒）",
+          "effect": {
+            "popMult": 1.15
+          },
+          "duration": 20
+        },
+        {
+          "label": "🎟️ 猫毛周边速售：立即 +600 人气",
+          "bonus": {
+            "popularity": 600
+          }
+        }
       ]
     },
     {
@@ -412,10 +1290,27 @@
       "desc": "一个自称懂星际航行的同学来入社",
       "kind": "good",
       "weight": 2,
-      "phases": ["m0", "m1", "m2"],
+      "phases": [
+        "m0",
+        "m1",
+        "m2"
+      ],
       "options": [
-        { "label": "🚀 让他开讲：人气 +10% 脑洞 +10%（20 秒）", "effect": { "popMult": 1.1, "brainMult": 1.1 }, "duration": 20 },
-        { "label": "🤝 先拉进社团：立即 +500 脑洞 +300 人气", "bonus": { "brainwave": 500, "popularity": 300 } }
+        {
+          "label": "🚀 让他开讲：人气 +10% 脑洞 +10%（20 秒）",
+          "effect": {
+            "popMult": 1.1,
+            "brainMult": 1.1
+          },
+          "duration": 20
+        },
+        {
+          "label": "🤝 先拉进社团：立即 +500 脑洞 +300 人气",
+          "bonus": {
+            "brainwave": 500,
+            "popularity": 300
+          }
+        }
       ]
     },
     {
@@ -425,10 +1320,24 @@
       "desc": "全校都在围观——社长的手速就是招牌",
       "kind": "good",
       "weight": 2,
-      "phases": ["m0", "m1"],
+      "phases": [
+        "m0",
+        "m1"
+      ],
       "options": [
-        { "label": "📣 现场直播发传单：点击 +20%（18 秒）", "effect": { "clickMult": 1.2 }, "duration": 18 },
-        { "label": "🫶 蹭一波人流：立即 +400 人气", "bonus": { "popularity": 400 } }
+        {
+          "label": "📣 现场直播发传单：点击 +20%（18 秒）",
+          "effect": {
+            "clickMult": 1.2
+          },
+          "duration": 18
+        },
+        {
+          "label": "🫶 蹭一波人流：立即 +400 人气",
+          "bonus": {
+            "popularity": 400
+          }
+        }
       ]
     },
     {
@@ -438,10 +1347,23 @@
       "desc": "食堂新品「外星人便当」，试吃员集体昏迷三分钟",
       "kind": "good",
       "weight": 2,
-      "phases": ["m0"],
+      "phases": [
+        "m0"
+      ],
       "options": [
-        { "label": "🛸 组队试吃直播：人气 +15%（20 秒）", "effect": { "popMult": 1.15 }, "duration": 20 },
-        { "label": "🧃 打包囤货：立即 +700 人气", "bonus": { "popularity": 700 } }
+        {
+          "label": "🛸 组队试吃直播：人气 +15%（20 秒）",
+          "effect": {
+            "popMult": 1.15
+          },
+          "duration": 20
+        },
+        {
+          "label": "🧃 打包囤货：立即 +700 人气",
+          "bonus": {
+            "popularity": 700
+          }
+        }
       ]
     },
     {
@@ -451,10 +1373,23 @@
       "desc": "一阵妖风把整沓传单卷上了天，全校追着纸跑",
       "kind": "bad",
       "weight": 1,
-      "phases": ["m0"],
+      "phases": [
+        "m0"
+      ],
       "options": [
-        { "label": "🌀 等风停：点击 -5%（12 秒）", "effect": { "clickMult": 0.95 }, "duration": 12 },
-        { "label": "🏃 追！：立即 -300 人气", "bonus": { "popularity": -300 } }
+        {
+          "label": "🌀 等风停：点击 -5%（12 秒）",
+          "effect": {
+            "clickMult": 0.95
+          },
+          "duration": 12
+        },
+        {
+          "label": "🏃 追！：立即 -300 人气",
+          "bonus": {
+            "popularity": -300
+          }
+        }
       ]
     },
     {
@@ -464,10 +1399,24 @@
       "desc": "社团中心秒杀，机会稍纵即逝",
       "kind": "good",
       "weight": 2,
-      "phases": ["m1", "m2"],
+      "phases": [
+        "m1",
+        "m2"
+      ],
       "options": [
-        { "label": "🛒 进货囤起来：活动购买九折（20 秒）", "effect": { "discount": 0.1 }, "duration": 20 },
-        { "label": "💡 倒卖小赚一笔：立即 +900 脑洞", "bonus": { "brainwave": 900 } }
+        {
+          "label": "🛒 进货囤起来：活动购买九折（20 秒）",
+          "effect": {
+            "discount": 0.1
+          },
+          "duration": 20
+        },
+        {
+          "label": "💡 倒卖小赚一笔：立即 +900 脑洞",
+          "bonus": {
+            "brainwave": 900
+          }
+        }
       ]
     },
     {
@@ -477,10 +1426,23 @@
       "desc": "图书馆爆满，全校卷王集体觉醒",
       "kind": "good",
       "weight": 2,
-      "phases": ["m1"],
+      "phases": [
+        "m1"
+      ],
       "options": [
-        { "label": "🧠 学霸辅导班：脑洞 +15%（20 秒）", "effect": { "brainMult": 1.15 }, "duration": 20 },
-        { "label": "📝 卖复习笔记：立即 +900 脑洞", "bonus": { "brainwave": 900 } }
+        {
+          "label": "🧠 学霸辅导班：脑洞 +15%（20 秒）",
+          "effect": {
+            "brainMult": 1.15
+          },
+          "duration": 20
+        },
+        {
+          "label": "📝 卖复习笔记：立即 +900 脑洞",
+          "bonus": {
+            "brainwave": 900
+          }
+        }
       ]
     },
     {
@@ -490,10 +1452,25 @@
       "desc": "广播里念了你们社团的名字，全校回头",
       "kind": "good",
       "weight": 1,
-      "phases": ["m1"],
+      "phases": [
+        "m1"
+      ],
       "options": [
-        { "label": "📣 小跑上台致意：人气 +10% 脑洞 +10%（20 秒）", "effect": { "popMult": 1.1, "brainMult": 1.1 }, "duration": 20 },
-        { "label": "🙂 站直了目视前方：立即 +500 人气 +300 脑洞", "bonus": { "popularity": 500, "brainwave": 300 } }
+        {
+          "label": "📣 小跑上台致意：人气 +10% 脑洞 +10%（20 秒）",
+          "effect": {
+            "popMult": 1.1,
+            "brainMult": 1.1
+          },
+          "duration": 20
+        },
+        {
+          "label": "🙂 站直了目视前方：立即 +500 人气 +300 脑洞",
+          "bonus": {
+            "popularity": 500,
+            "brainwave": 300
+          }
+        }
       ]
     },
     {
@@ -503,36 +1480,74 @@
       "desc": "社团上了头条，趁热打铁还是落袋为安？",
       "kind": "good",
       "weight": 2,
-      "phases": ["m2"],
+      "phases": [
+        "m2"
+      ],
       "options": [
-        { "label": "📢 全网推一波：影响力 +20%（20 秒）", "effect": { "influenceMult": 1.2 }, "duration": 20 },
-        { "label": "📋 官方回复帖：立即 +120 影响力", "bonus": { "influence": 120 } }
+        {
+          "label": "📢 全网推一波：影响力 +20%（20 秒）",
+          "effect": {
+            "influenceMult": 1.2
+          },
+          "duration": 20
+        },
+        {
+          "label": "📋 官方回复帖：立即 +120 影响力",
+          "bonus": {
+            "influence": 120
+          }
+        }
       ]
     },
     {
       "id": "investor",
       "emoji": "🕴️",
       "title": "神秘投资商到访",
-      "desc": "自称\u201c银河联邦商务代表\u201d的神秘人想赞助你们",
+      "desc": "自称“银河联邦商务代表”的神秘人想赞助你们",
       "kind": "good",
       "weight": 2,
-      "phases": ["m2"],
+      "phases": [
+        "m2"
+      ],
       "options": [
-        { "label": "🤝 接受赞助：立即 +5000 预算", "bonus": { "money": 5000 } },
-        { "label": "🌌 婉拒，格局打开：立即 +2000 影响力", "bonus": { "influence": 2000 } }
+        {
+          "label": "🤝 接受赞助：立即 +5000 预算",
+          "bonus": {
+            "money": 5000
+          }
+        },
+        {
+          "label": "🌌 婉拒，格局打开：立即 +2000 影响力",
+          "bonus": {
+            "influence": 2000
+          }
+        }
       ]
     },
     {
       "id": "tvInterview",
       "emoji": "📹",
       "title": "市电视台来访",
-      "desc": "想拍一集\u201c校园里的科幻社团\u201d纪录片",
+      "desc": "想拍一集“校园里的科幻社团”纪录片",
       "kind": "good",
       "weight": 2,
-      "phases": ["m2"],
+      "phases": [
+        "m2"
+      ],
       "options": [
-        { "label": "🎬 上镜！：影响力 +20%（20 秒）", "effect": { "influenceMult": 1.2 }, "duration": 20 },
-        { "label": "📝 低调递资料：立即 +250 影响力", "bonus": { "influence": 250 } }
+        {
+          "label": "🎬 上镜！：影响力 +20%（20 秒）",
+          "effect": {
+            "influenceMult": 1.2
+          },
+          "duration": 20
+        },
+        {
+          "label": "📝 低调递资料：立即 +250 影响力",
+          "bonus": {
+            "influence": 250
+          }
+        }
       ]
     },
     {
@@ -542,10 +1557,23 @@
       "desc": "隔壁 AI 又来挖人，得想个办法",
       "kind": "bad",
       "weight": 1,
-      "phases": ["m2"],
+      "phases": [
+        "m2"
+      ],
       "options": [
-        { "label": "🧊 无视：脑洞 -5%（12 秒）", "effect": { "brainMult": 0.95 }, "duration": 12 },
-        { "label": "🍕 请客留人：立即 -400 脑洞", "bonus": { "brainwave": -400 } }
+        {
+          "label": "🧊 无视：脑洞 -5%（12 秒）",
+          "effect": {
+            "brainMult": 0.95
+          },
+          "duration": 12
+        },
+        {
+          "label": "🍕 请客留人：立即 -400 脑洞",
+          "bonus": {
+            "brainwave": -400
+          }
+        }
       ]
     },
     {
@@ -555,10 +1583,20 @@
       "desc": "他们开出的条件好到社长本人心动了一瞬（就是社长本人）",
       "kind": "bad",
       "weight": 1,
-      "phases": ["m2"],
+      "phases": [
+        "m2"
+      ],
       "options": [
-        { "label": "🛡️ 不动如山（无损失）", "bonus": {} },
-        { "label": "🍲 用火锅留人：立即 -800 脑洞", "bonus": { "brainwave": -800 } }
+        {
+          "label": "🛡️ 不动如山（无损失）",
+          "bonus": {}
+        },
+        {
+          "label": "🍲 用火锅留人：立即 -800 脑洞",
+          "bonus": {
+            "brainwave": -800
+          }
+        }
       ]
     },
     {
@@ -568,10 +1606,181 @@
       "desc": "《星际穿越》只黑屏了，活动室里乱成一团",
       "kind": "bad",
       "weight": 1,
-      "phases": ["m0", "m1"],
+      "phases": [
+        "m0",
+        "m1"
+      ],
       "options": [
-        { "label": "🌙 夜话会：人气 -5%（12 秒）", "effect": { "popMult": 0.95 }, "duration": 12 },
-        { "label": "🎇 点蜡烛摆摊：立即 -300 人气", "bonus": { "popularity": -300 } }
+        {
+          "label": "🌙 夜话会：人气 -5%（12 秒）",
+          "effect": {
+            "popMult": 0.95
+          },
+          "duration": 12
+        },
+        {
+          "label": "🎇 点蜡烛摆摊：立即 -300 人气",
+          "bonus": {
+            "popularity": -300
+          }
+        }
+      ]
+    },
+    {
+      "id": "stationAlarm",
+      "emoji": "🚨",
+      "title": "空间站警报",
+      "desc": "第 3 区气密门报告异常，委员会建议保持冷静",
+      "kind": "bad",
+      "weight": 1,
+      "phases": [
+        "m25"
+      ],
+      "options": [
+        {
+          "label": "🔧 停机检修：空间站产出 -5%（15 秒）",
+          "effect": {
+            "popMult": 0.95
+          },
+          "duration": 15
+        },
+        {
+          "label": "🧯 手动封闭：立即 -200 制造力",
+          "bonus": {
+            "fab": -200
+          }
+        }
+      ]
+    },
+    {
+      "id": "solarFlare",
+      "emoji": "☀️",
+      "title": "太阳耀斑",
+      "desc": "恒星今天心情不错，多送了一波电",
+      "kind": "good",
+      "weight": 3,
+      "phases": [
+        "m25"
+      ],
+      "options": [
+        {
+          "label": "⚡ 全力充电：空间站产出 +20%（25 秒）",
+          "effect": {
+            "popMult": 1.2
+          },
+          "duration": 25
+        },
+        {
+          "label": "🔋 存进电池：立即 +800 能量",
+          "bonus": {
+            "energy": 800
+          }
+        }
+      ]
+    },
+    {
+      "id": "debrisField",
+      "emoji": "🪨",
+      "title": "穿越碎石带",
+      "desc": "小行星碎片撞进采集网，意外收获一堆原料",
+      "kind": "good",
+      "weight": 3,
+      "phases": [
+        "m25"
+      ],
+      "options": [
+        {
+          "label": "🪨 全员打捞：空间站产出 +20%（25 秒）",
+          "effect": {
+            "popMult": 1.2
+          },
+          "duration": 25
+        },
+        {
+          "label": "🧺 现场装舱：立即 +900 物质",
+          "bonus": {
+            "matter": 900
+          }
+        }
+      ]
+    },
+    {
+      "id": "alienSignal",
+      "emoji": "📶",
+      "title": "不明信号",
+      "desc": "一段重复了 1400 次的旋律，似乎来自某个科幻编辑部",
+      "kind": "good",
+      "weight": 2,
+      "phases": [
+        "m25"
+      ],
+      "options": [
+        {
+          "label": "📖 全程转录：创造力 +15%（25 秒）",
+          "effect": {
+            "brainMult": 1.15
+          },
+          "duration": 25
+        },
+        {
+          "label": "📡 归档留证：立即 +600 影响力 +2000 创造力",
+          "bonus": {
+            "influence": 600,
+            "creativity": 2000
+          }
+        }
+      ]
+    },
+    {
+      "id": "crewRally",
+      "emoji": "🧑‍🚀",
+      "title": "全员动员会",
+      "desc": "谢顿在通讯里念了一句诗，成员们决定连夜加班",
+      "kind": "good",
+      "weight": 2,
+      "phases": [
+        "m25"
+      ],
+      "options": [
+        {
+          "label": "🔥 连夜赶工：空间站产出 +25%（25 秒）",
+          "effect": {
+            "popMult": 1.25
+          },
+          "duration": 25
+        },
+        {
+          "label": "🍜 加餐犒劳：立即 +300 制造力",
+          "bonus": {
+            "fab": 300
+          }
+        }
+      ]
+    },
+    {
+      "id": "budgetAudit",
+      "emoji": "📋",
+      "title": "委员会远程审计",
+      "desc": "总部要求核对空间站的每一颗螺丝钉",
+      "kind": "bad",
+      "weight": 1,
+      "phases": [
+        "m25"
+      ],
+      "options": [
+        {
+          "label": "🧾 配合审计：创造力 -5%（15 秒）",
+          "effect": {
+            "brainMult": 0.95
+          },
+          "duration": 15
+        },
+        {
+          "label": "📦 补交清单：立即 -1500 创造力",
+          "bonus": {
+            "creativity": -1500
+          }
+        }
       ]
     }
   ],
@@ -582,9 +1791,18 @@
       "title": "演示环节崩了！",
       "desc": "筹备组卡到屏幕白屏，台下笑成一片",
       "options": [
-        { "label": "🎭 即兴脱口秀救场", "bonus": 25 },
-        { "label": "😰 假装是演出效果", "bonus": 10 },
-        { "label": "🛠️ 现场修 bug", "bonus": 18 }
+        {
+          "label": "🎭 即兴脱口秀救场",
+          "bonus": 25
+        },
+        {
+          "label": "😰 假装是演出效果",
+          "bonus": 10
+        },
+        {
+          "label": "🛠️ 现场修 bug",
+          "bonus": 18
+        }
       ]
     },
     {
@@ -593,8 +1811,14 @@
       "title": "场地猫咪上台了",
       "desc": "活动室宿管猫大摇大摆走上主舞台",
       "options": [
-        { "label": "🐾 让它当吉祥物互动", "bonus": 30 },
-        { "label": "🙅 抱回后台", "bonus": 8 }
+        {
+          "label": "🐾 让它当吉祥物互动",
+          "bonus": 30
+        },
+        {
+          "label": "🙅 抱回后台",
+          "bonus": 8
+        }
       ]
     },
     {
@@ -603,8 +1827,14 @@
       "title": "观众疯狂打 call",
       "desc": "呼声太高，请你们加演一段",
       "options": [
-        { "label": "🔥 加演！", "bonus": 28 },
-        { "label": "😅 稳定发挥就好", "bonus": 12 }
+        {
+          "label": "🔥 加演！",
+          "bonus": 28
+        },
+        {
+          "label": "😅 稳定发挥就好",
+          "bonus": 12
+        }
       ]
     },
     {
@@ -613,8 +1843,14 @@
       "title": "赞助商临时加码",
       "desc": "猫咖老板想追加赞助，条件是要给猫一个镜头",
       "options": [
-        { "label": "✅ 接受！猫猫出镜！", "bonus": 20 },
-        { "label": "❌ 谢绝猫权干预", "bonus": 15 }
+        {
+          "label": "✅ 接受！猫猫出镜！",
+          "bonus": 20
+        },
+        {
+          "label": "❌ 谢绝猫权干预",
+          "bonus": 15
+        }
       ]
     },
     {
@@ -623,18 +1859,30 @@
       "title": "灯光师罢工",
       "desc": "灯光师突然闹脾气，舞台一片漆黑",
       "options": [
-        { "label": "🔦 用手机手电筒打光", "bonus": 22 },
-        { "label": "🗣️ 广播全体打开手电", "bonus": 16 }
+        {
+          "label": "🔦 用手机手电筒打光",
+          "bonus": 22
+        },
+        {
+          "label": "🗣️ 广播全体打开手电",
+          "bonus": 16
+        }
       ]
     },
     {
       "id": "weird",
       "emoji": "🛸",
       "title": "神秘人要求上台",
-      "desc": "一个自称\u201c银河联盟审计员\u201d的人想上台讲话",
+      "desc": "一个自称“银河联盟审计员”的人想上台讲话",
       "options": [
-        { "label": "🎤 让他说！宇宙级流量！", "bonus": 35 },
-        { "label": "💂 礼貌请回", "bonus": 10 }
+        {
+          "label": "🎤 让他说！宇宙级流量！",
+          "bonus": 35
+        },
+        {
+          "label": "💂 礼貌请回",
+          "bonus": 10
+        }
       ]
     },
     {
@@ -643,8 +1891,14 @@
       "title": "下暴雨了",
       "desc": "校外观众被雨困住，活动室门口水漫金山",
       "options": [
-        { "label": "☔ 组织伞阵迎接", "bonus": 24 },
-        { "label": "📢 线上同步直播", "bonus": 20 }
+        {
+          "label": "☔ 组织伞阵迎接",
+          "bonus": 24
+        },
+        {
+          "label": "📢 线上同步直播",
+          "bonus": 20
+        }
       ]
     },
     {
@@ -653,19 +1907,34 @@
       "title": "评委意见分歧",
       "desc": "三位评委为年度最佳科幻社吵了起来",
       "options": [
-        { "label": "🤝 促成评委联名奖", "bonus": 30 },
-        { "label": "🎯 交给观众投票", "bonus": 18 }
+        {
+          "label": "🤝 促成评委联名奖",
+          "bonus": 30
+        },
+        {
+          "label": "🎯 交给观众投票",
+          "bonus": 18
+        }
       ]
     },
     {
       "id": "spaceJunk",
       "emoji": "🌠",
       "title": "天降太空垃圾",
-      "desc": "筹备棚被\u201c天降陨石\u201d砸了——其实是隔壁楼的外卖盒",
+      "desc": "筹备棚被“天降陨石”砸了——其实是隔壁楼的外卖盒",
       "options": [
-        { "label": "♻️ 回收当主题装饰", "bonus": 25 },
-        { "label": "📞 打给环保局投诉", "bonus": 10 },
-        { "label": "🎬 当场拍段\u201c灭霸手套\u201d短视频", "bonus": 20 }
+        {
+          "label": "♻️ 回收当主题装饰",
+          "bonus": 25
+        },
+        {
+          "label": "📞 打给环保局投诉",
+          "bonus": 10
+        },
+        {
+          "label": "🎬 当场拍段“灭霸手套”短视频",
+          "bonus": 20
+        }
       ]
     },
     {
@@ -674,9 +1943,18 @@
       "title": "校长带队视察",
       "desc": "校长带着检查组从天而降，快门声此起彼伏",
       "options": [
-        { "label": "🫖 献上咖啡和答辩 PPT", "bonus": 30 },
-        { "label": "🎤 请校长登台讲话十分钟", "bonus": 15 },
-        { "label": "🫥 假装剧组在拍戏", "bonus": 8 }
+        {
+          "label": "🫖 献上咖啡和答辩 PPT",
+          "bonus": 30
+        },
+        {
+          "label": "🎤 请校长登台讲话十分钟",
+          "bonus": 15
+        },
+        {
+          "label": "🫥 假装剧组在拍戏",
+          "bonus": 8
+        }
       ]
     },
     {
@@ -685,9 +1963,18 @@
       "title": "猫咖老板想投放广告",
       "desc": "校门口猫咖看上你们的客流，想塞一条猫猫广告",
       "options": [
-        { "label": "🐱 成交！猫猫出镜！", "bonus": 25 },
-        { "label": "😎 让社长亲自代言", "bonus": 15 },
-        { "label": "🙅 婉拒猫权干预", "bonus": 12 }
+        {
+          "label": "🐱 成交！猫猫出镜！",
+          "bonus": 25
+        },
+        {
+          "label": "😎 让社长亲自代言",
+          "bonus": 15
+        },
+        {
+          "label": "🙅 婉拒猫权干预",
+          "bonus": 12
+        }
       ]
     },
     {
@@ -696,9 +1983,18 @@
       "title": "音响是假货！",
       "desc": "租赁的音响临到开场全沙哑，举报人正举着发票冷笑",
       "options": [
-        { "label": "🎶 现场阿卡贝拉救场", "bonus": 22 },
-        { "label": "📱 全场手机外放同步", "bonus": 18 },
-        { "label": "🫣 装死不承认", "bonus": 8 }
+        {
+          "label": "🎶 现场阿卡贝拉救场",
+          "bonus": 22
+        },
+        {
+          "label": "📱 全场手机外放同步",
+          "bonus": 18
+        },
+        {
+          "label": "🫣 装死不承认",
+          "bonus": 8
+        }
       ]
     },
     {
@@ -707,8 +2003,14 @@
       "title": "体育生误入赛场",
       "desc": "田径队猛男一脚踩进主舞台，气氛剑拔弩张",
       "options": [
-        { "label": "🏁 临时加赛\u201c银河追逐战\u201d", "bonus": 24 },
-        { "label": "🙏 礼貌请回跑道", "bonus": 10 }
+        {
+          "label": "🏁 临时加赛“银河追逐战”",
+          "bonus": 24
+        },
+        {
+          "label": "🙏 礼貌请回跑道",
+          "bonus": 10
+        }
       ]
     },
     {
@@ -717,19 +2019,34 @@
       "title": "食堂断电了",
       "desc": "全校断电欢呼，饿狼们闻着味逼近活动室",
       "options": [
-        { "label": "🍜 免费泡面福利摊", "bonus": 26 },
-        { "label": "🌙 星空烛光食堂氛围", "bonus": 18 },
-        { "label": "📱 呼叫外卖补贴", "bonus": 14 }
+        {
+          "label": "🍜 免费泡面福利摊",
+          "bonus": 26
+        },
+        {
+          "label": "🌙 星空烛光食堂氛围",
+          "bonus": 18
+        },
+        {
+          "label": "📱 呼叫外卖补贴",
+          "bonus": 14
+        }
       ]
     },
     {
       "id": "twin",
       "emoji": "🌀",
-      "title": "两个\u201c我\u201d同时出现",
+      "title": "两个“我”同时出现",
       "desc": "台上多了一个一模一样的社长，谁是真身竟无法证伪",
       "options": [
-        { "label": "👯 一起致谢！双倍在场感", "bonus": 32 },
-        { "label": "🫥 假装没看见", "bonus": 12 }
+        {
+          "label": "👯 一起致谢！双倍在场感",
+          "bonus": 32
+        },
+        {
+          "label": "🫥 假装没看见",
+          "bonus": 12
+        }
       ]
     },
     {
@@ -738,9 +2055,18 @@
       "title": "银河联盟来电话",
       "desc": "自称银河百科编委会的星际热线打进了活动室电话",
       "options": [
-        { "label": "📣 公放给全场听", "bonus": 30 },
-        { "label": "🙏 感谢支持，挂断", "bonus": 10 },
-        { "label": "🎧 录音当彩蛋", "bonus": 20 }
+        {
+          "label": "📣 公放给全场听",
+          "bonus": 30
+        },
+        {
+          "label": "🙏 感谢支持，挂断",
+          "bonus": 10
+        },
+        {
+          "label": "🎧 录音当彩蛋",
+          "bonus": 20
+        }
       ]
     }
   ]
